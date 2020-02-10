@@ -30,3 +30,5 @@ cp /home/jim/archive/config_files/bash_profile /home/jim/.bash_profile
 gpgconf --kill gpg-agent
 
 source ~/.bash_profile
+
+shred -u -n 33 -z archive_keys.sh
