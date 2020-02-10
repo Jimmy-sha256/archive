@@ -20,11 +20,11 @@ tar xzf archive.tar.gz
 shred -u -n 33 -z archive.tar.gz
 
 
-mv /home/jim/archive/config_files/gpg-agent.conf /home/jim/.gnupg
+cp /home/jim/archive/config_files/gpg-agent.conf /home/jim/.gnupg
 
-mv /home/jim/archive/config_files/sshcontrol /home/jim/.gnupg
+cp /home/jim/archive/config_files/sshcontrol /home/jim/.gnupg
 
-mv /home/jim/archive/config_files/bash_profile /home/jim/.bash_profile
+cp /home/jim/archive/config_files/bash_profile /home/jim/.bash_profile
 
 
 gpgconf --kill gpg-agent
