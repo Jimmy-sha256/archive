@@ -35,6 +35,7 @@ shred -u -n 33 -z archive.tar.gz
 # transfer config files 
 cp /home/jim/archive/config_files/gpg-agent.conf /home/jim/.gnupg                                                                                          
 cp /home/jim/archive/config_files/sshcontrol /home/jim/.gnupg  
+cp /home/jim/archive/config_files/gtk.css /home/jim/.config/gtk-3.0
 
 # transfer dot_files
 cp /home/jim/archive/dot_files/.bash_profile /home/jim/.bash_profile                                                                                                            
