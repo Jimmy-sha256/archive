@@ -51,3 +51,11 @@ gpgconf --kill gpg-agent
 
 # source bashrc
 source ~/.bash_profile
+
+
+# dock settings
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 35
