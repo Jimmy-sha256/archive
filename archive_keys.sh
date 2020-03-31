@@ -3,9 +3,14 @@
 # copy gpg keys into /home/jim directory before executing script
 
 # update
+apt update
+apt upgrade -y
 
 # download package list
 # wget https://github.com/Jimmy-sha256/config_files/blob/master/package.list
+
+apt install git -y
+apt install tmux -y
 
 # install package list
 # dpkg --set-selections < ~/package.list
@@ -37,15 +42,15 @@ tar xzf archive.tar.gz
 shred -u -n 33 -z archive.tar.gz
 
 # download config files / dot files
-
 git clone https://github.com/Jimmy-sha256/dot_files.git
 git clone https://github.com/Jimmy-sha256/config_files.git
 
+# transfer config files
 cp /home/jim/config_files/gpg-agent.conf /home/jim/.gnupg                                                                                          
 cp /home/jim/config_files/gpg-agent.conf /home/jim/.gnupg /home/jim/.gnupg 
 cp /home/jim/config_files/gtk.css /home/jim/.gnupg/home/jim/.config/gtk-3.0
 
-# transfer dot_files
+# transfer dot files
 cp /home/jim/dot_files/.bash_profile /home/jim/.bash_profile
 cp /home/jim/dot_files/.bashrc /home/jim/.bashrc
 cp /home/jim/dot_files/.gitconfig /home/jim/.gitconfig
