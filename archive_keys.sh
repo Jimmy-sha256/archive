@@ -38,30 +38,29 @@ shred -u -n 33 -z archive.tar.gz
 
 # download config files / dot files
 
-wget https://github.com/Jimmy-sha256/config_files/blob/master/gpg-agent.conf -P /home/jim/.gnupg                                                                                          
-wget https://github.com/Jimmy-sha256/config_files/blob/master/sshcontrol -P /home/jim/.gnupg  
-wget https://github.com/Jimmy-sha256/config_files/blob/master/gtk.css -P /home/jim/.config/gtk-3.0
+git clone https://github.com/Jimmy-sha256/dot_files.git
+git clone https://github.com/Jimmy-sha256/config_files.git
+
+cp /home/jim/config_files/gpg-agent.conf /home/jim/.gnupg                                                                                          
+cp /home/jim/config_files/gpg-agent.conf /home/jim/.gnupg /home/jim/.gnupg 
+cp /home/jim/config_files/gtk.css /home/jim/.gnupg/home/jim/.config/gtk-3.0
 
 # transfer dot_files
-wget https://github.com/Jimmy-sha256/dot_files/blob/master/.bash_profile
-wget https://github.com/Jimmy-sha256/dot_files/blob/master/.bashrc
-wget https://github.com/Jimmy-sha256/dot_files/blob/master/.gitconfig
-wget https://github.com/Jimmy-sha256/dot_files/blob/master/.gitignore_global
-wget https://github.com/Jimmy-sha256/dot_files/blob/master/.inputrc
-wget https://github.com/Jimmy-sha256/dot_files/blob/master/.profile
-wget https://github.com/Jimmy-sha256/dot_files/blob/master/.tmux.conf
-wget https://github.com/Jimmy-sha256/dot_files/blob/master/.vimrc
-
-# killl gpg agent
-gpgconf --kill gpg-agent
-
-# source bashrc
-source ~/.bash_profile
-
+cp /home/jim/dot_files/.bash_profile /home/jim/.bash_profile
+cp /home/jim/dot_files/.bashrc /home/jim/.bashrc
+cp /home/jim/dot_files/.gitconfig /home/jim/.gitconfig
+cp /home/jim/dot_files/.gitignore_global /home/jim/.gitignore_global
+cp /home/jim/dot_files/.inputrc /home/jim/.inputrc
+cp /home/jim/dot_files/.profile /home/jim/.profile
+cp /home/jim/dot_files/.tmux /home/jim/.tmux.conf
+cp /home/jim/dot_files/.vimrc /home/jim/.vimrc
 
 # dock settings
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
-
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 35
+
+# dpkg --get-selections > ~/package.list
+# sudo dpkg --set-selections < ~/archive/package.list
+# sudo apt-get dselect-upgrade -y
+
