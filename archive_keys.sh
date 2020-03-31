@@ -4,8 +4,11 @@
 
 # update
 
+# download package list
+wget https://github.com/Jimmy-sha256/config_files/blob/master/package.list
+
 # install package list
-dpkg --set-selections < ~/archive/package.list
+dpkg --set-selections < ~/package.list
 apt-get dselect-upgrade -y
 
 # import keys
@@ -25,6 +28,7 @@ gpg --decrypt archive.gpg > archive.tar.gz
 shred -u -n 33 -z public.gpg
 shred -u -n 33 -z secret.gpg
 shred -u -n 33 -z archive.gpg
+shred -u -n 33 -z package.list
 
 # extract archive
 tar xzf archive.tar.gz
@@ -32,19 +36,27 @@ tar xzf archive.tar.gz
 # securely delete .tar.gz file
 shred -u -n 33 -z archive.tar.gz
 
+# download config files / dot files
+git clone https://github.com/Jimmy-sha256/config_files.git
+git clone https://github.com/Jimmy-sha256/dot_files.git
+
 # transfer config files 
-cp /home/jim/archive/config_files/gpg-agent.conf /home/jim/.gnupg                                                                                          
-cp /home/jim/archive/config_files/sshcontrol /home/jim/.gnupg  
-cp /home/jim/archive/config_files/gtk.css /home/jim/.config/gtk-3.0
+cp /home/jim/config_files/gpg-agent.conf /home/jim/.gnupg                                                                                          
+cp /home/jim/config_files/sshcontrol /home/jim/.gnupg  
+cp /home/jim/config_files/gtk.css /home/jim/.config/gtk-3.0
 
 # transfer dot_files
-cp /home/jim/archive/dot_files/.bash_profile /home/jim/.bash_profile                                                                                                            
-cp /home/jim/archive/dot_files/.bashrc /home/jim/.bashrc                                                                                                                         
-cp /home/jim/archive/dot_files/.gitconfig /home/jim/.gitconfig                                                                                                                  
-cp /home/jim/archive/dot_files/.gitignore_global /home/jim/.gitignore_global                                                                                                    
-cp /home/jim/archive/dot_files/.inputrc /home/jim/.inputrc                                                                                                                      
-cp /home/jim/archive/dot_files/.profile /home/jim/.profile                                                                                        
-cp /home/jim/archive/dot_files/.vimrc /home/jim/.vimrc      
+cp /home/jim/dot_files/.bash_profile /home/jim/.bash_profile                                                                                                            
+cp /home/jim/dot_files/.bashrc /home/jim/.bashrc                                                                                                                         
+cp /home/jim/dot_files/.gitconfig /home/jim/.gitconfig                                                                                                                  
+cp /home/jim/dot_files/.gitignore_global /home/jim/.gitignore_global                                                                                                    
+cp /home/jim/dot_files/.inputrc /home/jim/.inputrc                                                                                                                      
+cp /home/jim/dot_files/.profile /home/jim/.profile                                                                                        
+cp /home/jim/dot_files/.vimrc /home/jim/.vimrc      
+
+# delete temporary folders
+rm -rf /home/jim/dot_files
+rm -rf /home/jim/config_files
 
 # killl gpg agent
 gpgconf --kill gpg-agent
