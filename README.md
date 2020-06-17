@@ -1,4 +1,5 @@
--- copy public.gpg and secret.gpg from secure airgapped storage into /home/jim --
+# install git
+# copy public.gpg and secret.gpg from secure airgapped storage into /home/jim 
 
 wget https://github.com/Jimmy-sha256/archive/raw/master/archive_keys.sh
 
