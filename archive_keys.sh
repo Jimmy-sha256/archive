@@ -16,8 +16,8 @@ apt upgrade -y
 # download package list
 # wget https://github.com/Jimmy-sha256/config_files/blob/master/package.list
 
-apt install git -y
-apt install tmux -y
+# apt install git -y
+# apt install tmux -y
 
 # install package list
 # dpkg --set-selections < ~/package.list
