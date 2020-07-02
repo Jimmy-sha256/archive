@@ -15,3 +15,5 @@ git clone https://github.com/Jimmy-sha256/config_files.git
 cp /home/jim/config_files/gpg-agent.conf /home/jim/.gnupg 
 cp /home/jim/config_files/sshcontrol /home/jim/.gnupg 
 cp /home/jim/config_files/gtk.css /home/jim/.config/gtk-3.0
+
+rm -rf /home/jim/config_files
