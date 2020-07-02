@@ -2,6 +2,12 @@
 
 # before executing script copy gpg keys into /home/jim directory before executing script
 
+# install packages
+
+apt install git
+apt install curl
+apt install vim-gtk3
+
 # import keys
 gpg --import secret.gpg
 gpg --import public.gpg
@@ -62,14 +68,3 @@ cp /home/jim/dot_files/.vimrc /home/jim/
 # remove temp directories
 rm -rf /home/jim/config_files
 rm -rf /home/jim/dot_files
-
-# dock settings
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
-gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 35
-
-gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']" # replace caps with ctrl
-
-# dpkg --get-selections > ~/package.list
-# sudo dpkg --set-selections < ~/archive/package.list
-# sudo apt-get dselect-upgrade -y
