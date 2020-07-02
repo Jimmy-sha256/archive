@@ -4,9 +4,9 @@
 
 # install packages
 
-apt install git
-apt install curl
-apt install vim-gtk3
+apt install git -y
+apt install curl -y
+apt install vim-gtk3 -y
 
 # import keys
 gpg --import secret.gpg
