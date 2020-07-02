@@ -1,3 +1,4 @@
+sudo apt install git -y
 
 # import keys
 gpg --import secret.gpg
