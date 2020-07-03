@@ -34,3 +34,11 @@ cp /home/jim/dot_files/.vimrc /home/jim/
 # remove temp directories
 rm -rf /home/jim/config_files
 rm -rf /home/jim/dot_files
+
+
+# dock settings
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 35
+
+gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']" # replace caps with ctrl
