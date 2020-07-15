@@ -1,7 +1,19 @@
-* copy public.gpg and secret.gpg from secure airgapped storage into /home/jim 
+##### Encrypt archive folder ready for upload
 
-wget https://raw.githubusercontent.com/Jimmy-sha256/archive/master/keys.sh
+* Convert archive folder to tar
 
-sudo chmod 777 keys.sh
+```
+tar czf archive.tar.gz /home/jim/archive/
+```
 
-./keys.sh
+* List public keys
+
+```
+gpg --list-keys
+```
+
+* Encrypt folder
+
+```
+gpg -o archive.gpg --encrypt -r D5557B332830404939C27D578CEDDB5272262D4C /home/jim/archive.tar.gz
+```
