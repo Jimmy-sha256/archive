@@ -3,7 +3,7 @@
 * Convert archive folder to tar
 
 ```
-tar czf archive.tar.gz /home/jim/archive/
+tar -czzf archive.tar.gz archive/
 ```
 
 * List public keys
