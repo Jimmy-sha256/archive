@@ -1,6 +1,6 @@
 ##### Encrypt archive folder ready for upload
 
-* Convert archive folder to tar
+* From home/user/ convert archive/ folder to tar
 
 ```bash
 tar -czzf archive.tar.gz archive/
@@ -39,4 +39,21 @@ mv archive.gpg encrypted_archive/
 rm archive.tar.gz
 ```
 
+* Navigate /home/user/encrypted_archive
 
+```bash
+cd /home/user/encrypted_archive
+```
+
+* Add new commit
+
+```bash
+git add .
+git commit -m "update"
+```
+
+* Push commit 
+
+```bash
+git push origin master
+```
