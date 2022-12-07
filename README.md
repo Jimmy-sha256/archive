@@ -42,17 +42,17 @@ rm archive.tar.gz
 * Navigate /home/user/encrypted_archive
 
 ```bash
-cd /home/user/encrypted_archive
+cd /home/jim/encrypted_archive
 ```
 
-* Add new commit
+* Add new commit to branch
 
 ```bash
 git add .
 git commit -m "update"
 ```
 
-* Push commit 
+* Push commit to github
 
 ```bash
 git push origin master
