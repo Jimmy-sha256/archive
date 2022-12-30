@@ -36,16 +36,6 @@ mv archive.gpg encrypted_archive/
 rm archive.tar.gz
 ```
 
-* All together
-
-```bash
-cp /media/sf_Vault/Passwords.kdbx /home/jim/archive/Passwords.kdbx
-tar -czzf archive.tar.gz archive/
-gpg -o archive.gpg --encrypt -r D5557B332830404939C27D578CEDDB5272262D4C /home/jim/archive.tar.gz
-mv archive.gpg encrypted_archive/
-rm archive.tar.gz
-```
-
 * Navigate /home/user/encrypted_archive
 
 ```bash
@@ -63,4 +53,14 @@ git commit -m "update"
 
 ```bash
 git push origin master
+```
+* All together
+
+```bash
+cp /media/sf_Vault/Passwords.kdbx /home/jim/archive/Passwords.kdbx
+tar -czzf archive.tar.gz archive/
+gpg -o archive.gpg --encrypt -r D5557B332830404939C27D578CEDDB5272262D4C /home/jim/archive.tar.gz
+mv archive.gpg encrypted_archive/
+rm archive.tar.gz
+cd /home/jim/encrypted_archive
 ```
