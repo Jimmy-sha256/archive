@@ -1,5 +1,11 @@
 ##### Encrypt archive folder ready for upload
 
+* Copy Passwords.kdbx
+
+```bash
+cp /media/sf_Vault/Passwords.kdbx /home/jim/archive/Passwords.kdbx
+```
+
 * From home/user/ convert archive/ folder to tar
 
 ```bash
@@ -33,6 +39,7 @@ rm archive.tar.gz
 * All together
 
 ```bash
+cp /media/sf_Vault/Passwords.kdbx /home/jim/archive/Passwords.kdbx
 tar -czzf archive.tar.gz archive/
 gpg -o archive.gpg --encrypt -r D5557B332830404939C27D578CEDDB5272262D4C /home/jim/archive.tar.gz
 mv archive.gpg encrypted_archive/
