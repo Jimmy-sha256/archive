@@ -63,4 +63,7 @@ gpg -o archive.gpg --encrypt -r D5557B332830404939C27D578CEDDB5272262D4C /home/j
 mv archive.gpg encrypted_archive/
 rm archive.tar.gz
 cd /home/jim/encrypted_archive
+git add .
+git commit -m "update"
+git push origin master
 ```
