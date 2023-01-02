@@ -1,4 +1,4 @@
-##### Encrypt archive folder ready for upload
+## Encrypt archive folder ready for upload
 
 * Copy Passwords.kdbx
 
@@ -66,4 +66,21 @@ cd /home/jim/encrypted_archive
 git add .
 git commit -m "update"
 git push origin master
+```
+
+* Decrypt the .gpg
+
+```bash
+gpg --decrypt /home/jim/encrypted_archive/archive.gpg > /home/jim/archive.tar.gz
+```
+* extract archive
+
+```bash
+tar -xzvf archive.tar.gz
+```
+
+* remove archive.tar.gz
+
+```bash
+shred -u -n 33 -z archive.tar.gz
 ```
