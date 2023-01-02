@@ -68,6 +68,8 @@ git commit -m "update"
 git push origin master
 ```
 
+## Decrypt archive.gpg
+
 * Decrypt the .gpg
 
 ```bash
